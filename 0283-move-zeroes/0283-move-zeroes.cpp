@@ -1,6 +1,8 @@
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
         //Approach 1
 
         // int j=0;
@@ -21,7 +23,6 @@ public:
                 swap(nums[zero],nums[nonzero]);
                 zero++;
             }
-            cout<<nonzero;
             nonzero++;
         }
     }
