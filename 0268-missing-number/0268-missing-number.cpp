@@ -11,7 +11,8 @@ public:
         // return i;
 
         //Approach 2
-
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
         int ExpectedSum=nums.size()*(nums.size()+1)/2;
         int sum=0;
         for (int i:nums) sum+=i;
