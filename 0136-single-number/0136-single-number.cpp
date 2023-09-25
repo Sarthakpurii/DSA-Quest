@@ -4,7 +4,7 @@ public:
         ios_base::sync_with_stdio(false);
         cin.tie(NULL);
         int sum=0;
-        for (int i:nums){
+        for (const int i:nums){
             sum^=i;
         }
         return sum;
