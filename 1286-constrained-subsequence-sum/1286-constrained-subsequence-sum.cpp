@@ -1,23 +1,26 @@
-#include <vector>
-#include <deque>
-#include <algorithm>
-
 class Solution {
 public:
-    int constrainedSubsetSum(std::vector<int>& nums, int k) {
-        std::deque<int> dq;
-        for (int i = 0; i < nums.size(); ++i) {
-            nums[i] += !dq.empty() ? nums[dq.front()] : 0;
-            
-            while (!dq.empty() && (i - dq.front() >= k || nums[i] >= nums[dq.back()])) {
-                if (nums[i] >= nums[dq.back()]) dq.pop_back();
-                else dq.pop_front();
+    int constrainedSubsetSum(vector<int>& nums, int k) {
+        int maxSum = nums[0];
+        deque<int> maxSumQueue;
+
+        for (int i = 0; i < nums.size(); i++) {
+            nums[i] += !maxSumQueue.empty() ? maxSumQueue.front() : 0;
+            maxSum = max(maxSum, nums[i]);
+
+            while (!maxSumQueue.empty() && nums[i] > maxSumQueue.back()) {
+                maxSumQueue.pop_back();
             }
-            
+
             if (nums[i] > 0) {
-                dq.push_back(i);
+                maxSumQueue.push_back(nums[i]);
+            }
+
+            if (i >= k && !maxSumQueue.empty() && maxSumQueue.front() == nums[i - k]) {
+                maxSumQueue.pop_front();
             }
         }
-        return *std::max_element(nums.begin(), nums.end());
+
+        return maxSum;
     }
 };
