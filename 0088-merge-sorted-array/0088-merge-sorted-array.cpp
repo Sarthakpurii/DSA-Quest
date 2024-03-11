@@ -4,22 +4,16 @@ public:
         ios_base::sync_with_stdio(false);
         cin.tie(NULL);
         
-        if(n>0)
-        {for(int i=m+n-1;i>-1;i--){
-            if(m==0){
-            for(int i=n-1;i>-1;i--){
-                nums1[i]=nums2[i];
-            }
-        }
-            else if(nums1[m-1]>nums2[n-1]){
-                nums1[i]=nums1[m-1];
-                m--;
+        n=n-1,m=m-1;
+        int k=n+m+1;
+
+        while(n>=0){
+            if(m>=0 && nums1[m]>nums2[n]){
+                nums1[k--]=nums1[m--];
             }
             else{
-                nums1[i]=nums2[n-1];
-                n--;
+                nums1[k--]=nums2[n--];
             }
-            if(n==0) break;
-        }}
+        }
     }
 };
