@@ -1,6 +1,8 @@
 class Solution {
 public:
     int merge(vector<int> &arr,int low,int mid,int high){
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
         int countt=0;
         int left=low,right=mid+1;
         vector<int> temp;
