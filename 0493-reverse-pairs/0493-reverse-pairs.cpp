@@ -6,14 +6,24 @@ public:
         int countt=0;
         int left=low,right=mid+1;
         vector<int> temp;
-        int left2=low,right2=mid+1;
+        // int left2=low,right2=mid+1;
 
-        while(left2<=mid && right2<=high){
-            if(arr[left2]>arr[right2]*2LL){
-                countt+=mid-left2+1;
-                right2++;
+        // while(left2<=mid && right2<=high){
+        //     if(arr[left2]>arr[right2]*2LL){
+        //         countt+=mid-left2+1;
+        //         right2++;
+        //     }
+        //     else left2++;
+        // }
+
+        int j = mid + 1;
+
+        // Count reverse pairs
+        for(int i = low; i <= mid; i++) {
+            while(j <= high && arr[i] > 2LL * arr[j]) {
+                j++;
             }
-            else left2++;
+            countt += j - (mid + 1);
         }
 
 
