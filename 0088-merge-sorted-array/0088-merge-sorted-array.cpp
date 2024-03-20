@@ -4,7 +4,7 @@ public:
         ios_base::sync_with_stdio(false);
         cin.tie(NULL);
 
-        
+    
         n=n-1,m=m-1;
         int k=n+m+1;
         while(n>=0){
