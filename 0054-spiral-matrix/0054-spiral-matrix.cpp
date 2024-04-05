@@ -8,7 +8,6 @@ public:
         int row=matrix.size(),col=matrix[0].size();
         int top=0,bottom=row-1,left=0,right=col-1;
 
-
         while(solution.size()<row*col){
             for(int i=left;i<=right;i++){
                 solution.push_back(matrix[top][i]);
