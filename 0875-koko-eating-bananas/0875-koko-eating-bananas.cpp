@@ -14,7 +14,6 @@ public:
         }
         return low;
     }
-
 private:
     long hrsReq(vector<int> nums,int rate){
         long hrs=0;
