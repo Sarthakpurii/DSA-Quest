@@ -1,23 +1,25 @@
 class Solution {
 public:
     string reverseWords(string s) {
-        reverse(s.begin(),s.end());
-        int n=s.size();
-        int left=0;
-        int right=0;
-        int i=0;
-        while(i<n){
-            while(i<n && s[i]==' ')i++;
-            if(i==n)break; // to stop index going out of bounds
-            while(i<n && s[i]!=' '){
-                s[right++]=s[i++];
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        string ans;
+        int i=s.size()-1,slen=0;
+        for(i;i>-1;i--){
+            if(s[i]==' '){
+                if(slen!=0){
+                    ans+=s.substr(i+1,slen)+' ';
+                    slen=0;
+                }
             }
-            reverse(s.begin()+left,s.begin()+right);
-            s[right++]=' ';
-            left=right;
-            i++;
+            else{
+                slen++;
+            }
         }
-        s.resize(right-1);
-        return s;
+        if(slen!=0){
+            ans+=s.substr(i+1,slen)+' ';
+        }
+        ans.pop_back();
+        return ans;
     }
 };
