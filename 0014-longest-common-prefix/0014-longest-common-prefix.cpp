@@ -8,6 +8,7 @@ public:
         for(int i=1;i<strs.size();i++){
             n=min(n,(int)strs[i].size());
         }
+        
         int i=0;
         bool stop=false;
         for(i;i<n;i++){
