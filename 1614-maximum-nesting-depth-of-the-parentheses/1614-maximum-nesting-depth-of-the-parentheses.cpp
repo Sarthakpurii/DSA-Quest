@@ -1,6 +1,7 @@
 class Solution {
 public:
     int maxDepth(string s) {
+        
         ios_base::sync_with_stdio(false);
         cin.tie(NULL);
         int temp=0,sol=0;
