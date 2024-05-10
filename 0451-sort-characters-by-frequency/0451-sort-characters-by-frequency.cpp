@@ -7,7 +7,6 @@ public:
         for (char c : s) {
             m[c]++;
         }
-        
 
         multimap<int, char> mm;
         for (auto c : m) {
