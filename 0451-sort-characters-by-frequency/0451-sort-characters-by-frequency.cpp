@@ -8,7 +8,6 @@ public:
             m[c]++;
         }
 
-        
         multimap<int, char> mm;
         for (auto c : m) {
             mm.insert({c.second, c.first});
