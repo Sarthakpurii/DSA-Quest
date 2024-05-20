@@ -4,7 +4,7 @@ public:
         ios_base::sync_with_stdio(false);
         cin.tie(NULL);
         int sol=0,n=s.size();
-        unordered_map<char,int> conv={
+        map<char,int> conv={
             {'I',1},
             {'V',5},
             {'X',10},
