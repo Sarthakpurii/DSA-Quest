@@ -15,19 +15,22 @@ public:
         };
         
         for(int i=0;i<n;i++){
-            if(s[i]=='I'){
-                if((i+1!=n) && (s[i+1]=='V' || s[i+1]=='X')) sol-=conv[s[i]];
-                else sol+=conv[s[i]];
-            }
-            else if(s[i]=='X'){
-                if((i+1!=n) && (s[i+1]=='L' || s[i+1]=='C')) sol-=conv[s[i]];
-                else sol+=conv[s[i]];
-            }
-            else if(s[i]=='C'){
-                if((i+1!=n) && (s[i+1]=='D' || s[i+1]=='M')) sol-=conv[s[i]];
-                else sol+=conv[s[i]];
-            }
-            else sol+=conv[s[i]];
+            // if(s[i]=='I'){
+            //     if((i+1!=n) && (s[i+1]=='V' || s[i+1]=='X')) sol-=conv[s[i]];
+            //     else sol+=conv[s[i]];
+            // }
+            // else if(s[i]=='X'){
+            //     if((i+1!=n) && (s[i+1]=='L' || s[i+1]=='C')) sol-=conv[s[i]];
+            //     else sol+=conv[s[i]];
+            // }
+            // else if(s[i]=='C'){
+            //     if((i+1!=n) && (s[i+1]=='D' || s[i+1]=='M')) sol-=conv[s[i]];
+            //     else sol+=conv[s[i]];
+            // }
+            // else sol+=conv[s[i]];
+
+            if(i+1==n || conv[s[i]]>=conv[s[i+1]]) sol+=conv[s[i]];
+            else sol-=conv[s[i]];
         }
         return sol;
     }
