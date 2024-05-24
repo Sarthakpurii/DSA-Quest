@@ -12,7 +12,6 @@ public:
             sign = (s[i++] == '+') ? 1 : -1; // Handle sign
         }
 
-        
         while (i < n && isdigit(s[i])) {
             dig = s[i++] - '0';
             if (sol > INT_MAX / 10 || (sol == INT_MAX / 10 && dig > INT_MAX % 10)) {
