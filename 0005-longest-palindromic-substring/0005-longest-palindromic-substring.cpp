@@ -1,30 +1,26 @@
 class Solution {
 public:
-    std::string longestPalindrome(std::string s) {
-        std::string T = "^#";
-        for (char c : s) {
-            T += c;
-            T += '#';
+    string expandAroundCenter(string s,int l,int r){
+        while(l>-1 && r<s.length() && s[l]==s[r]){
+            l--;
+            r++;
         }
-        T += "$";
+        return s.substr(l+1,r-l-1);
+    }
+    string longestPalindrome(string s) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        if(s.size()<=1) return s;
+        
+        string maxs=s.substr(0,1);
+        for(int i=0;i<s.size();i++){
+            string odd=expandAroundCenter(s,i,i);
+            string even=expandAroundCenter(s,i,i+1);
 
-        int n = T.size();
-        std::vector<int> P(n, 0);
-        int C = 0, R = 0;
-
-        for (int i = 1; i < n-1; ++i) {
-            P[i] = (R > i) ? std::min(R - i, P[2*C - i]) : 0;
-            while (T[i + 1 + P[i]] == T[i - 1 - P[i]])
-                P[i]++;
-
-            if (i + P[i] > R) {
-                C = i;
-                R = i + P[i];
-            }
+            if(odd.size()>maxs.size()) maxs=odd;
+            if(even.size()>maxs.size()) maxs=even;
         }
-
-        int max_len = *std::max_element(P.begin(), P.end());
-        int center_index = std::distance(P.begin(), std::find(P.begin(), P.end(), max_len));
-        return s.substr((center_index - max_len) / 2, max_len);
+        return maxs;
+        
     }
 };
