@@ -13,7 +13,7 @@ public:
     ListNode* middleNode(ListNode* head) {
 
         ListNode* t=head;
-        while(t->next!=NULL and t->next->next!=NULL){
+        while(t->next!=NULL && t->next->next!=NULL){
             head=head->next;
             t=t->next->next;
         }
