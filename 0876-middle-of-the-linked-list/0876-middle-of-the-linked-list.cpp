@@ -11,8 +11,7 @@
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(NULL);
+
         ListNode* t=head;
         while(t->next!=NULL and t->next->next!=NULL){
             head=head->next;
