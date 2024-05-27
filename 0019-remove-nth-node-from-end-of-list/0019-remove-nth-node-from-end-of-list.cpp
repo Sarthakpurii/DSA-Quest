@@ -21,6 +21,10 @@ public:
         cout<<idx;
         idx=idx-n;
         cout<<idx;
+        if(idx==0){
+            head=head->next;
+            return head;
+        }
         temp=head;
         for(int i=1;i<idx ;i++){
             cout<<i;
