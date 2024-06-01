@@ -11,6 +11,7 @@
 class Solution {
 public:
     ListNode *middleFinder(ListNode *head){
+        if(!head->next->next) return head;
         ListNode *fast=head,*slow=head;
         while(fast->next and fast->next->next){
             fast=fast->next->next;
@@ -19,6 +20,8 @@ public:
         return slow;
     }
     ListNode *mergeFunc(ListNode *l1,ListNode *l2){
+        if(!l1) return l2;
+        else if(!l2) return l1;
         ListNode* temp=new ListNode(-1);
         ListNode *curr=temp;
         while(l1 and l2){
