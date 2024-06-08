@@ -14,6 +14,7 @@ public:
     //     if (neg) return 1/sol;
     //     return sol;
     // }
+
     double powCalc(double x,int n){
         if(n==1) return x;
         double sol;
