@@ -11,7 +11,6 @@ public:
             if(!st.empty()) left[i]=st.top();
             st.push(i);
         }
-
         while(!st.empty()) st.pop();
         int ans=INT_MIN;
         for(int i=n-1;i>-1;i--){
