@@ -19,7 +19,6 @@
 //         else min=st[t].second;
 //     }
 
-
 //     int top() {
 //         return st[t].first;
 //     }
