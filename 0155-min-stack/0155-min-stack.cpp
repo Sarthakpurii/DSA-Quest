@@ -18,7 +18,6 @@
 //         if(t==-1) min=INT_MAX;
 //         else min=st[t].second;
 //     }
-
 //     int top() {
 //         return st[t].first;
 //     }
