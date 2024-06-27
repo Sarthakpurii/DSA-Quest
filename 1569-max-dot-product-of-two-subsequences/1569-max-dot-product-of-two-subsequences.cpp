@@ -13,6 +13,7 @@ public:
             if (memo[i][j] != INT_MIN) {
                 return memo[i][j];
             }
+
             
             memo[i][j] = max(
                 nums1[i] * nums2[j] + max(dp(i + 1, j + 1), 0),
