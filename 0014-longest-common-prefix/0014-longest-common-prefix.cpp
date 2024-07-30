@@ -24,3 +24,4 @@ public:
         return (i>0)?strs[0].substr(0,i): "";
     }
 };
+
