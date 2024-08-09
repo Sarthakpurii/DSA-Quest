@@ -9,23 +9,24 @@ public:
         for(int i=x-1;i<x+2;i++){
             for(int j=y-1;j<y+2;j++){
                 if (grid[i][j]==0 || grid[i][j]>9) return false;
-                col[j]+=grid[i][j];
-                row[i]+=grid[i][j];
+                col[j-y+1]+=grid[i][j];
+                // cout<<i<<" "<<j<<endl;
+                row[i-x+1]+=grid[i][j];
             }
         }
         for(auto i: col) if(i!=15) return false;
         for(auto i: row) if(i!=15) return false;
         return true;
 
-
     }
     int numMagicSquaresInside(vector<vector<int>>& grid) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(NULL);
+        // ios_base::sync_with_stdio(false);
+        // cin.tie(NULL);
         int ans=0,n=grid.size(),m=grid[0].size();
         if(n<3 || m<3) return 0;
         for(int i=1;i<n-1;i++){
             for(int j=1;j<m-1;j++){
+                // cout<<i<<" "<<j<<endl;
                 ans+=valid(grid,i,j);
             }
         }
