@@ -10,6 +10,7 @@ public:
         reverse(ans.begin(),ans.end());
         return ans;
     }
+
     string convertDateToBinary(string date) {
         ios_base::sync_with_stdio(false);
         cin.tie(NULL);
