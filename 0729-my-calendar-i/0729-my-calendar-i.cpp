@@ -3,7 +3,8 @@ public:
     set<pair<int,int>> st;
     MyCalendar() {
     }
-    
+
+
     bool book(int start, int end) {
         auto iter=st.upper_bound({start,end});
         if(iter!=st.end() && iter->second<end) return false;
