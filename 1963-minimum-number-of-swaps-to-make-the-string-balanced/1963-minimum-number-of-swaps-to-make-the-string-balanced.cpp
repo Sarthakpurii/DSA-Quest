@@ -3,7 +3,6 @@ public:
     int minSwaps(string s) {
         ios_base::sync_with_stdio(false);
         cin.tie(NULL);
-        
         int currbalance=0,inbalance=0;
         for(char c:s){
             if(c=='[') currbalance--;
