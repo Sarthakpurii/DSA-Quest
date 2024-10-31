@@ -9,7 +9,6 @@ public:
         for (int num : nums) {
             totalSum += num;
         }
-
         // Find the remainder when total sum is divided by p
         int rem = totalSum % p;
         if (rem == 0) return 0; // If the remainder is 0, no subarray needs to be removed
