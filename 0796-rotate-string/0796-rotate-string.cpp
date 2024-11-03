@@ -7,7 +7,6 @@ public:
         if (s==goal) return true;
         int len=s.size();
 
-        
         for(int i=0;i<len-1;i++){
             s=s.substr(1,len-1)+s[0];
             if (s==goal) return true;
