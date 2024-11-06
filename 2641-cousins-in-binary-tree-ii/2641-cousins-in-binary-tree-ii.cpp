@@ -11,6 +11,7 @@
  */
 class Solution {
 public:
+
     TreeNode* replaceValueInTree(TreeNode* root) {
         ios_base::sync_with_stdio(false);
         cin.tie(NULL);
